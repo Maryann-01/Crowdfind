@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<app-home-info-shared></app-home-info-shared>
+<section class="about-main">
+    <div>
+        <h2>About us</h2>
+        <div class="about-img-text1 about-img-text">
+            <img src="assets/images/audience.png" alt="audience in a conference room"/>
+            <div class="about-text-div about-text-div1">
+                <p>At <span style="color:#FF5722;font-weight:700;">CrowdFind</span>, we believe that life is meant to be experienced. From concerts and festivals to conferences and workshops, our platform connects you to the best events happening around you and across the globe. Whether you're seeking entertainment, education, or simply a good time, we're here to help you find and book it with ease.</p>
+                <p> <span style="color:#FF5722;font-weight:700;">Our Mission </span>is to simplify the event booking process by providing a seamless and reliable platform where users can discover and secure tickets for their favorite events with just a few clicks. No more complicated navigation or hidden fees—just a straightforward experience designed for you.</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2>What We Offer</h2>
+        <div class="about-img-text2 about-img-text">
+            <div class="about-text-div about-text-div2">
+                <ul>
+                    <li>Wide Range of Events: Whether you're looking for music festivals, sports games, or corporate conferences, we’ve got it all in one place.</li>
+                    <li>Simple and Fast Booking: Our user-friendly interface makes it easy to find events, select tickets, and get instant confirmation.</li>
+                    <li>Global Access: From local happenings to international spectacles, explore events happening anywhere in the world.</li>
+                </ul>
+                <p>At <span style="color:#FF5722;font-weight: 700; ">CrowdFind</span>, we are passionate about bringing people together through the power of shared experiences. We are dedicated to making it easy for you to discover, book, and attend events that inspire and excite you.</p>
+                <h4 style="font-weight:600;width:70%;font-size:0.9em;align-self: flex-start;">Join us in creating memories that last a lifetime</h4>
+                <button>Book Your Next Event Today!</button>
+            </div>
+            <img src="assets/images/lecture.png" alt="a person delivering lecture"/>
+        </div>
+    </div>
+    <div class="team-div">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="team-grid">
+                <div class="team-card" *ngFor="let member of teamMembers">
+                    <img [src]="member.image" class="team-img" alt="{{ member.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ member.name }}</h5>
+                        <p class="card-text">{{ member.job }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</section>
+<app-stay-updated></app-stay-updated>
+<app-footer></app-footer>

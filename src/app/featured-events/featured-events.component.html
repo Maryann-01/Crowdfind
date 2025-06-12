@@ -1,0 +1,104 @@
+<!-- HTML Template -->
+<section class="myEvents mt-4 mb-2">
+  <h2 style="text-align: center; margin-top: 8vh;">Featured Events</h2>
+
+  <div class="event-container mt-4">
+    <div class="event-grid">
+      <ng-container *ngIf="loading; else eventCards">
+        <div *ngFor="let skeleton of skeletons" class="event-card">
+          <div class="card-h-100" style="display: flex; flex-direction: column; height: 100%;">
+            <!-- Image skeleton -->
+            <ngx-skeleton-loader [theme]="{
+          'width': '100%',
+          'height': '200px',
+          'border-radius': '8px',
+          'margin-bottom': '12px'
+        }" [animation]="'progress'">
+            </ngx-skeleton-loader>
+            <div class="card-body" style="flex: 1;">
+              <div class="save-share-icon">
+                <!-- Circle skeletons for icons -->
+                <ngx-skeleton-loader [theme]="{
+              'width': '30px',
+              'height': '30px',
+              'border-radius': '50%'
+            }" [animation]="'progress'">
+                </ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{
+              'width': '30px',
+              'height': '30px',
+              'border-radius': '50%'
+            }" [animation]="'progress'">
+                </ngx-skeleton-loader>
+              </div>
+              <!-- Text lines -->
+              <ngx-skeleton-loader [theme]="{
+            'width': '80%',
+            'height': '18px',
+            'margin': '10px 0 6px 0',
+            'border-radius': '4px'
+          }" [animation]="'progress'">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+            'width': '60%',
+            'height': '16px',
+            'margin-bottom': '6px',
+            'border-radius': '4px'
+          }" [animation]="'progress'">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+            'width': '70%',
+            'height': '16px',
+            'margin-bottom': '6px',
+            'border-radius': '4px'
+          }" [animation]="'progress'">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme="{
+            'width': '50%',
+            'height': '16px',
+            'margin-bottom': '12px',
+            'border-radius': '4px'
+          }" [animation]="'progress'">
+              </ngx-skeleton-loader>
+              <!-- Button skeleton -->
+              <ngx-skeleton-loader [theme]="{
+            'width': '100%',
+            'height': '36px',
+            'border-radius': '2px'
+          }" [animation]="'progress'">
+              </ngx-skeleton-loader>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #eventCards>
+        <div *ngFor="let event of displayedEvents" class="event-card">
+          <div class="card-h-100">
+            <img [src]="event.img" class="card-img-top trend-event-img" alt="{{ event.title }}" />
+            <div class="card-body">
+              <div class="save-share-icon">
+                <img [src]="event.liked ? 'assets/images/Heart-Filled.png' : 'assets/images/Heart.png'"
+                  alt="{{ event.liked ? 'Unlike event' : 'Like event' }}"
+                  (click)="toggleLike(event); $event.stopPropagation();" style="cursor: pointer;" />
+                <img src="assets/images/Share 1.png" alt="Share event" (click)="shareEventLink(event)"
+                  style="cursor: pointer;" />
+              </div>
+              <p class="card-title"><span class="card-body-desc">Theme:</span> {{ event.title }}</p>
+              <p class="card-text"><span class="card-body-desc">Host:</span> {{ event.hostname }}</p>
+              <p class="card-text"><span class="card-body-desc">Date:</span> {{ event.date | date: 'd MMMM, yyyy' }}</p>
+              <p class="card-text"><span class="card-body-desc">Time:</span> {{ event.date | date: 'shortTime' }} </p>
+              <button class="event-btn" (click)="viewEventDetails(event)">View Event Details</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+
+    <div class="text-center mt-4" *ngIf="!loading && hasMoreEvents">
+      <button class="event-btn explore-more-btn" (click)="loadMore()">
+        Explore More Events
+      </button>
+    </div>
+  </div>
+</section>

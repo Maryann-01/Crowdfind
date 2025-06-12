@@ -1,0 +1,52 @@
+
+<div class="body">
+    <div class="overlayDiv">
+      <!-- Close button -->
+      <div class="close-button" (click)="closePopup()">
+        <img src="assets/images/Icon Frame.png" alt="close">
+      </div>
+  
+      <!-- Popup title -->
+      <div class="popup-title">
+        Select Your Location <br />To Enable Us Serve You Better
+      </div>
+  
+      <!-- Form fields -->
+      <form>
+        <div class="form-field">
+          <label for="country">Country of Residence</label>
+          <select id="country" name="country" [(ngModel)]="location.country" (change)="onCountryChange($event)">
+            <option value="" disabled selected>Select from here</option>
+            <option value="nigeria">Nigeria</option>
+            <option value="ghana">Ghana</option>
+            <option value="south-africa">South Africa</option>
+          </select>
+        </div>
+  
+        <div class="form-field">
+          <label for="state">State of Residence</label>
+          <select id="state" name="state" [(ngModel)]="location.state" (change)="onStateChange($event)">
+            <option value="" disabled selected>Select from here</option>
+            <option value="imo">Imo</option>
+            <option value="lagos">Lagos</option>
+            <option value="abuja">Abuja</option>
+          </select>
+        </div>
+  
+        <div class="form-field">
+          <label for="town">Town of Residence</label>
+          <select id="town" name="town" [(ngModel)]="location.town">
+            <option value="" disabled selected>Select from here</option>
+            <option value="owerri">Owerri</option>
+            <option value="ikeja">Ikeja</option>
+            <option value="garki">Garki</option>
+          </select>
+        </div>
+        <!-- Done button -->
+        <button type="button" class="done-button" (click)="submitLocation()">Done</button>
+  
+        
+      </form>
+    </div>
+  </div>
+  

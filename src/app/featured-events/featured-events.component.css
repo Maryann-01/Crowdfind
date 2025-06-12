@@ -1,0 +1,137 @@
+/* Clean Responsive CSS */
+.event-container {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+  gap: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.event-card {
+  background-color: #fff;
+  border: 1px solid #9A9A99;
+  border-radius: 8px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border: none;
+}
+
+.card-title, .card-text {
+  margin-bottom: 0.5rem;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.save-share-icon {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.save-share-icon img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
+}
+
+.save-share-icon img:hover {
+  transform: scale(1.1);
+}
+
+.trend-event-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.card-body-desc {
+  color: #FF5722;
+  font-family: Open Sans;
+}
+
+.event-btn {
+  border: none;
+  background-color: #FF5722;
+  color: white;
+  width: 100%;
+  border-radius: 4px;
+  padding: 0.75em;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+
+.event-btn:hover {
+  background-color: #E64919;
+}
+
+.event-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.explore-more-btn {
+  width: 300px;
+  margin-top: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+  
+  .event-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .explore-more-btn {
+    display: none !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .event-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+

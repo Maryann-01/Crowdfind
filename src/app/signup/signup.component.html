@@ -1,0 +1,60 @@
+<div class="signupDiv">
+  <div class="left-section">
+    <div class="logo">
+      <img src="assets/images/Crowdfund-logo.png" alt="CrowdFind Logo" />
+      <span>CrowdFind</span>
+    </div>
+  </div>
+  
+  <div class="right-section">
+    <div class="form-container">
+      <h2>Welcome to CrowdFind!</h2>
+      <p style="font-size:14px;margin-bottom:5px;">Please, Create an account to access our features</p>
+
+     
+
+
+
+      <!-- Form -->
+      <form (submit)="onSubmit($event)">
+        <label class="mend">Full Name</label>
+        <input class="log" type="text" placeholder="Enter Your Full Name Here" required [(ngModel)]="name" name="name" />
+
+        <label class="mend">Email</label>
+        <input class="log" type="email" placeholder="Enter Your Email Address Here" required [(ngModel)]="email" name="email" />
+
+        <label class="mend">Create Password</label>
+        <input class="log" type="password" placeholder="Create Password Here" required [(ngModel)]="password" name="password" />
+
+        <label class="mend">Confirm Password</label>
+        <input class="log" type="password" placeholder="Confirm Password Here" required [(ngModel)]="confirmPassword" name="confirmPassword" />
+
+        <div class="checkbox-container">
+          <input class="check" type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required />
+          <label class="cont">
+            I have read and agree to the <span class="tnC">Terms and Conditions</span> of CrowdFind
+          </label>
+        </div>
+
+        <button type="submit" class="signup-btn" >Create Account</button>
+      </form>
+
+      <span class="pos" style="font-size:12px;">Have an Account? <a [routerLink]="['/login']">Login</a></span>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="showSuccessModal">
+  <div class="modal-content">
+    <img src="assets/images/success-image.png" alt="Success" />
+    <h3>Congratulations!</h3>
+    <p>Your account is ready to use.<br />You will be redirected to the Home Page in a few seconds...</p>
+    <div class="loader">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <a href="#" class="close-btn" (click)="closeModal()">Close</a>
+  </div>
+</div>

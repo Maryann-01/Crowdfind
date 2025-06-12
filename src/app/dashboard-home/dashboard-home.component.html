@@ -1,0 +1,36 @@
+<!-- <app-dashboard></app-dashboard> -->
+<section class="d-flex align-items-center flex-column">
+    <h3>Welcome , {{ firstName }}  🥳 </h3>
+    <p>Glad to have you on board</p>
+    <div class="header d-flex justify-space-between align-items-center">
+      <h3>Upcoming Events</h3>
+      <p class="see-more-text" (click)="loadMore()">See More</p>
+    </div>
+    <div class="event-container">
+      <div *ngFor="let event of displayedEvents" class="event-card">
+        <div class="card h-100">
+          <img [src]="event.img" class="card-img-top trend-event-img" alt="{{ event.title }}" />
+          <div class="card-body">
+            <div class="save-share-icon">
+              <img 
+                [src]="event.liked ? 'assets/images/Heart-Filled.png' : 'assets/images/Heart.png'"
+                alt="{{ event.liked ? 'Unlike event' : 'Like event' }}" 
+                (click)="toggleLike(event); $event.stopPropagation();" 
+                style="cursor: pointer;" />
+              <img 
+                src="assets/images/Share 1.png" 
+                alt="Share event" 
+                (click)="shareEventLink(event)" 
+                style="cursor: pointer;" />              
+            </div>
+            <p class="card-title"><span class="card-body-desc">Theme:</span> {{ event.title }}</p>
+            <p class="card-text"><span class="card-body-desc">Host:</span> {{ event.hostname }}</p>
+            <p class="card-text"><span class="card-body-desc">Date:</span> {{ event.date | date: 'd MMMM, yyyy' }}</p>  
+            <p class="card-text"><span class="card-body-desc">Time:</span> {{ event.date | date: 'shortTime' }} </p>
+            <button class="event-btn" (click)="viewEventDetails(event)">View Event Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<app-stay-updated></app-stay-updated>

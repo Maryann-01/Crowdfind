@@ -1,0 +1,59 @@
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal.emit()">&times;</span>
+
+    <div *ngIf="!showSuccessModal">
+      <h2 style="text-align:center;">Attendee Information</h2>
+      <div class="modal-info-box">
+        <p>By submitting this application, you agree to allow the sharing of contact details with our team for quality assurance purposes.</p>
+      </div>
+      <form (submit)="onSubmit(); $event.preventDefault();" class="d-flex align-items-center flex-column">
+        <!-- Email Field -->
+        <div class="d-flex flex-column label-input">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Enter Your Email Address Here" required [ngClass]="{'error-border': submitted && !email}" />
+          <div *ngIf="submitted && !email" class="error-message">Please fill in your email address</div>
+        </div>
+
+        <!-- Full Name Field -->
+        <div class="d-flex flex-column label-input">
+          <label for="fullName">Full Name:</label>
+          <input type="text" id="fullName" name="fullName" [(ngModel)]="fullName" required placeholder="Enter Your Full Name Here" [ngClass]="{'error-border': submitted && !fullName}" />
+          <div *ngIf="submitted && !fullName" class="error-message">Please fill in your full name</div>
+        </div>
+
+        <!-- Phone Number Field -->
+        <div class="d-flex flex-column label-input">
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required placeholder="Enter Your Phone Number Here" [ngClass]="{'error-border': submitted && !phoneNumber}" />
+          <div *ngIf="submitted && !phoneNumber" class="error-message">Please fill in your phone number</div>
+        </div>
+
+        <!-- Number of Attendees Field -->
+        <div class="d-flex flex-column label-input">
+          <label for="numberOfAttendees">How many attendees are you booking for?</label>
+          <input type="number" id="numberOfAttendees" name="numberOfAttendees" [(ngModel)]="numberOfAttendees" required min="1" placeholder="Enter the number of attendees" [ngClass]="{'error-border': submitted && numberOfAttendees === null}" />
+          <div *ngIf="submitted && numberOfAttendees === null" class="error-message">Please fill in the number of attendees</div>
+        </div>
+
+        
+        <div class="checkbox-field">
+          <input type="checkbox" name="agreeToEmails" [(ngModel)]="agreeToEmails" [ngClass]="{'error-border': submitted && !agreeToEmails}" />
+          <p style="width:100%; font-size: 12px;margin-left:7px;">
+            I agree to receive email and text message communications from <span style="color: #FF5722;">CrowdFind and its networks</span>
+          </p>
+          <div *ngIf="submitted && !agreeToEmails" class="error-message">You must agree to receive communications</div>
+        </div>
+
+        <button type="submit" [disabled]="!email || !fullName || !phoneNumber || numberOfAttendees === null || !agreeToEmails">Book Event</button>
+      </form>
+    </div>
+
+    <div *ngIf="showSuccessModal" class="success-modal d-flex align-items-center flex-column">
+      <img src="assets/images/success image.png" alt="success image" style="width:100px;height:100px"/>
+      <p style="text-align: center;">Event has been Booked Successfully</p>
+      <p style="text-align: center;">Kindly check your mail for your ticket and other Information</p>
+      <a style="color: #FF5722;text-decoration: none;text-align: center;" (click)="closeSuccessModal()" [routerLink]="['/home']" class="home-link">Click here to go back to Home</a>
+    </div>
+  </div>
+</div>

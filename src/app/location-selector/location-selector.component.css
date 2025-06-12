@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+/* Full-screen overlay background */
+.body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup container styling */
+.overlayDiv {
+    max-width: 100% ;
+    text-align: center;
+    background-color: white;
+    width: 400px;
+    height: 450px;
+    padding: 30px;
+    border-radius: 9px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button styling */
+.close-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 22px;
+    color: #ff5722;
+    cursor: pointer;
+    border: 1px solid red;
+    width: 17.67px;
+    height: 17.67px;
+    border-radius: 17.67px;
+    text-decoration: none;
+}
+.close-button img {
+    width: 16.67px;
+    height: 16.67px;
+top: 11.67px;
+left: 11.67px;
+gap: 0px;
+border: 3.33px 0px 0px 0px;
+opacity: 0px;
+align-items: center;
+justify-content: center;
+display: flex;
+
+}
+
+/* Form field styling */
+.form-field {
+    font-family: Open Sans;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
+    margin-top: 20px;
+
+}
+
+label {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+select {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.07px;
+    color: #BCBCBC;
+}
+
+/* Done button styling */
+.done-button {
+    background-color: #ff5722;
+    color: white;
+    border: 1px solid #ff5722;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    height: 35px;
+    margin-top: 30px;
+}
+
+.done-button:hover {
+    background-color: #e64a19;
+}
+
+/* Header title styling */
+.popup-title {
+width: 100%;
+    max-width: 384px;
+    font-family: open sans;
+font-size: 18px;
+font-weight: 700;
+line-height: 32.68px;
+text-align: center;
+
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .overlay {
+        flex-direction: column;
+    }
+
+     .form-field {
+        width: 100%;
+    }
+}

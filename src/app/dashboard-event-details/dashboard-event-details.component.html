@@ -1,0 +1,54 @@
+
+<div class="d-flex flex-column">
+    <!-- <app-dashboard></app-dashboard> -->
+    <div>
+        <section class="myEventDetails mt-4 mb-2">
+            <div class="event-details-container" *ngIf="event">
+                <div class="card event-card-large">
+                    <div class="event-img-container">
+                        <img [src]="event.img" alt="{{ event.title }}" class="event-img-large" />
+                    </div>
+                    <div class="card-body">
+                        <div class="save-share-icon d-flex justify-content-between">
+                            <img 
+                                [src]="event.liked ? 'assets/images/Heart-Filled.png' : 'assets/images/Heart.png'"
+                                alt="save event" 
+                                (click)="toggleLike()" 
+                                style="cursor: pointer;"
+                            />
+                            <img src="assets/images/Share 1.png" alt="share event" (click)="copyEventLink()" />
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p class="card-text"><span class="card-body-desc">Theme:</span> {{ event.title }}</p>
+                            <p class="card-text"><span class="card-body-desc">Host:</span> {{ event.hostname }}</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <p class="card-text"><span class="card-body-desc">Date:</span> {{ event.date | date: 'd MMMM, yyyy' }}</p>
+                            <p class="card-text"><span class="card-body-desc">Time:</span> {{ event.date | date: 'shortTime' }}</p>
+                        </div>
+                        <p class="card-text"><span class="card-body-desc">Tags:</span> {{ event.tags.join(', ') }}</p>
+                        <p class="card-text"><span class="card-body-desc">Description:</span> {{ event.description }}</p>
+        
+                        <div class="button-group">
+                            <button class="interest-btn" (click)="openModal()">Indicate Interest</button>
+                            <button class="not-interested-btn">Not Interested</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div *ngIf="!event"> 
+                <p>Loading event details...</p>
+            </div>
+        </section>
+        
+        <app-interest-modal
+          *ngIf="showModal"
+          [showModal]="showModal"
+          [eventId]="selectedEventId"
+          (closeModal)="closeModal()">
+        </app-interest-modal>
+    </div>
+</div>
+
+

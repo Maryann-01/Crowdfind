@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.footer{
+    background: #FF5722;
+    color:white;
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+padding-bottom:15px;
+}
+.crowdfundlogo-div h2{
+    font-family: Montserrat;
+font-weight: 800;
+
+}
+.foot-sect-1 p{
+font-family: Roboto;
+font-size: 0.8em;
+font-weight: 400;
+}
+
+.me-2{
+    color: #FFFFFF;
+}
+.footer-flex,.socials-div,.socials,.social,.crowdfundlogo-div{
+    display:flex;
+}
+.bold-desc{
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    font-family: Open Sans;
+}
+
+.footer-flex{
+    gap:6vw;
+    padding:6vh 4vw;
+}
+.foot-sect-3 .top{
+    font-family: Open Sans;
+font-size: 0.9em;
+font-weight: 400;
+}
+.crowdfundlogo-div{
+    align-items: center;
+}
+.foot-sect-2{
+    font-family: Open Sans;
+font-size: 0.9em;
+
+}
+.bold{
+    font-weight: 700; 
+}
+.social img{
+    width: 15px;
+height: 15px;
+}
+.social{
+    gap:0.2vw;
+    display:flex;
+     justify-content: center;
+}
+.social p{
+    font-family: Roboto;
+font-weight: 400;
+font-size:0.75em;
+}
+.socials-div{
+    gap:1.3vw;
+}
+.socials{
+    margin-bottom:2.5vh;
+    justify-content: space-around;
+font-family: Roboto;
+gap:2.5vw;
+}
+.socials>p{
+    font-size:0.82em;
+}
+.foot-sect-3 input{
+    width:100%;
+    border:none;
+  margin-top:0.4vh;
+  padding:2px;
+  border-radius: 4px;
+}
+.foot-sect-3 input:placeholder{
+    font-family: Open Sans;
+font-size: 0.8em;
+font-weight: 400;
+color: #5F5656;
+}
+.foot-sect-3 button{
+    border-radius: 4px;
+    border:none;
+    background-color: #F5F5F5;
+    width:100%;
+    margin-top:1vh;
+}
+.subscribe-btn{
+font-family: Roboto;
+font-size: 16px;
+font-weight: 700;
+color: #FF5722;
+}
+
+
+
+@media ( max-width:480px){
+    .footer{
+        display: flex;
+        width: 100vw;
+        padding-bottom: 3rem;
+        /* margin: 0rem; */
+    }
+    .footer-flex{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+    .socials{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:1rem
+    }
+    .socials-div{
+        display: flex;
+        flex-direction: row;
+        gap:1.2rem
+        
+    }
+    .socials p{
+font-size:0.7em;
+    }
+}

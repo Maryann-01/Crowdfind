@@ -1,0 +1,39 @@
+<div class="loginDiv">
+  <div class="left-section">
+    <div class="logo">
+      <img src="assets/images/Crowdfund-logo.png" alt="CrowdFind Logo" />
+      <span class="pave">CrowdFind</span>
+    </div>
+  </div>
+  
+    <div class="form-section">
+      <div class="form-container">
+        <h2>Welcome Back to CrowdFind!</h2>
+        <p>Please, Login to your account to access our features</p>
+  
+  
+
+
+        <form (ngSubmit)="onSubmit()">
+          <label class="mend">Email</label>
+          <input class="log" type="email" placeholder="Enter Your Email Address Here" [(ngModel)]="email" name="email" />
+  
+          <label class="mend">Password</label>
+          <input class="log" type="password" placeholder="Enter Password Here" [(ngModel)]="password" name="password" />
+  
+          <div class="checkbox-container d-flex justify-space-between align-items-center">
+            <div class="checkbox-rm d-flex align-items-center">
+              <input type="checkbox" id="remember-me" [(ngModel)]="rememberMe" name="rememberMe" />
+              <p >Remember me</p>
+            </div>
+            <a [routerLink]="'/forgot-password'" class="forgot-password" >Forgot Password?</a>
+          </div>
+  
+          <button type="submit" class="signup-btn">Login</button>
+        </form>
+  
+        <span style="font-size:13px;">Don't have an Account? <a [routerLink]="'/signup'"  style="font-size:13px;margin-left:3px;text-decoration: none">Sign Up</a></span>
+      </div>
+    </div>
+  </div>
+  

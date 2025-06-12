@@ -1,0 +1,143 @@
+<div>
+    <!-- Navbar -->
+    <div class="dashboard-search">
+        <div class="d-flex align-items-center logo-div " style="margin-left:20px;">
+            <img src="assets/images/Crowdfund-logo.png" class="me-2" style="height: 40px; width: 40px"
+                alt="Crowdfind logo" />
+            <h2 class="navbar-brand">CrowdFind</h2>
+        </div>
+        <form class="d-flex nav-form" role="search">
+            <div class="input-group">
+                <div class="bg-white search-div">
+                    <i class="bi bi-search"></i>
+                </div>
+                <input type="text" class="form-control border-start-0" placeholder="Search Events"
+                    aria-label="Search" />
+            </div>
+
+            <div class="dropdown-menu show">
+                <a class="dropdown-item">
+                </a>
+            </div>
+        </form>
+        <div class="profile-image">
+            <img [src]="profilePicture" alt="User Profile" class="rounded-circle"
+                style="height: 40px; width: 40px;" />
+        </div>
+    </div>
+    <div  class="d-flex flex-grow-1">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse ">
+            <div class="position-sticky pt-3">
+                <h4 class="text-center py-3 ">Main Navigation</h4>
+                <div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " aria-current="page" routerLink="/dashboard/dashboardhome" routerLinkActive="active-link">
+                                <img src="assets/images/home-icon.png" alt="Overview Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">Home</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/dashboard/events" routerLinkActive="active-link">
+                                <img src="assets/images/event-icon.png" alt="Event Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">Events</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" routerLink="/calendar">
+                                <img src="assets/images/upcoming-eventicon.png" alt="Event Icon" class="me-2 icon-img" />
+                                <span>Upcoming Booked Events</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/settings">
+                                <img src="assets/images/myBookings.png" alt="Event Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">My Bookings</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/settings">
+                                <img src="assets/images/saved-events.png" alt="Saved Events Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">Saved Events</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/settings">
+                                <img src="assets/images/notifications-icon.png" alt="Notifications Icon"
+                                    class="me-2 icon-img" />
+                                <span>Notifications</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/dashboard/profile" routerLinkActive="active-link">
+                                <img src="assets/images/profile-icon.png" alt="Profile Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">My Profile</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Additional</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" routerLink="/settings">
+                                <img src="assets/images/settings-icon.png" alt="Settings Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">Settings</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" routerLink="/settings">
+                                <img src="assets/images/help-circle.png" alt="Settings Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">Help & Support</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/settings">
+                                <img src="assets/images/contactUs-icon.png" alt="Contact Us Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">Contact Us</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/settings">
+                                <img src="assets/images/aboutUs-icon.png" alt="About Us Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">About Us</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/settings">
+                                <img src="assets/images/tnC.png" alt="Terms and Conditions Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem">Terms and Conditions</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/home">
+                                <img src="assets/images/logout-icon.png" alt="Logout Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem" style="color:#FF0101;">Logout</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+    
+                </div>
+            </div>
+        </nav>
+        <div class="content-section flex-grow-1 p-4 bg-white">
+            <router-outlet></router-outlet>
+          </div>
+    </div>
+    
+</div>

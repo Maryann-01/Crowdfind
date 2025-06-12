@@ -1,0 +1,69 @@
+<div class="dashboard-container d-flex flex-column">
+  <!-- <app-dashboard></app-dashboard> -->
+  <section class="myEvents mt-4 mb-2">
+      <div class="header d-flex justify-space-between align-items-center">
+        <h2>Trending Events</h2>
+        <p class="see-more-text" (click)="loadMore()">See More</p>
+      </div>
+      <div class="event-container">
+        <div class="event-grid">
+          <div *ngFor="let event of events | slice:0:4" class="event-card">
+            <div class="card h-100">
+              <img [src]="event.img" class="card-img-top trend-event-img" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
+              
+              <div class="card-body">
+                <div class="save-share-icon">
+                  <img src="assets/images/Heart.png" alt="save event"/>
+                  <img src="assets/images/Share 1.png" alt="share event" (click)="copyEventLink(event.id)" style="cursor: pointer;"/>
+                </div>
+                <p class="card-title"><span class="card-body-desc">Theme:</span> {{ event.title }}</p>
+                <p class="card-text"><span class="card-body-desc">Host:</span> {{ event.hostname }}</p>
+                <p class="card-text"><span class="card-body-desc">Date:</span>{{ event.date | date: 'd MMMM, yyyy' }}</p>  
+                <p class="card-text"><span class="card-body-desc">Time:</span>{{ event.date | date: 'shortTime' }}</p> 
+                <button class="event-btn" (click)="viewEventDetails(event)">View Event Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="myEvents mt-4 mb-2">
+      <div class="header d-flex justify-space-between align-items-center">
+        <h2>Events Near Me</h2>
+        <p class="see-more-text" (click)="loadMore()">See More</p>
+      </div>
+      <div class="event-container mt-4">
+        <div class="event-grid">
+          <div *ngFor="let event of events | slice:0:4" class="event-card">
+            <div class="card h-100">
+              <img [src]="event.img" class="card-img-top trend-event-img" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
+                
+                     
+            </div>
+              <div class="card-body">
+                <div class="save-share-icon">
+                  <img src="assets/images/Heart.png" alt="save event"/>
+                  <img 
+                src="assets/images/Share 1.png" 
+                alt="Share event" 
+                (click)="shareEventLink(event)" 
+                style="cursor: pointer;" />   
+                  <!-- <img src="assets/images/Share 1.png" alt="share event" (click)="copyEventLink(event.id)" style="cursor: pointer;"/> -->
+                </div>
+                <p class="card-title"><span class="card-body-desc">Theme:</span> {{ event.title }}</p>
+                <p class="card-text"><span class="card-body-desc">Host:</span> {{ event.hostname }}</p>
+                <p class="card-text"><span class="card-body-desc">Date:</span>{{ event.date | date: 'd MMMM, yyyy' }}</p>  
+                <p class="card-text"><span class="card-body-desc">Time:</span>{{ event.date | date: 'shortTime' }}</p> 
+                <button class="event-btn" (click)="viewEventDetails(event)">View Event Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </section>
+
+
+</div>
+<app-stay-updated></app-stay-updated>
+

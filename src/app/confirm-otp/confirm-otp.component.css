@@ -1,0 +1,153 @@
+/* Add the provided styles here */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  height: 100vh;
+}
+.containerDiv {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.left-section {
+  width: 50%;
+  background: url('/assets/images/unsplash.jpg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.left-section img {
+  width: 45.14px;
+  height: 48.82px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.left-section .logo {
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  width: 244px;
+  height: 51px;
+  top: 32.97px;
+  left: 74.67px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ff5722;
+}
+.right-section {
+  width: 50%;
+  background: url('/assets/images/Frame 1000014043.png') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  text-align: center;
+  max-width: 387px;
+  width: 100%;
+}
+.header-title {
+  color: #2c2a2a;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32.68px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+p {
+  color: #545454;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+  text-align: center;
+}
+.verification-input {
+  color: #2c2a2a;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  transform: scale(0.65);
+}
+.verification-input input {
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  text-align: center;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+.submit-button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  height: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+.submit-button:hover {
+  background-color: #e64a19;
+}
+.info-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+  color: #545454;
+  margin-top: 20px;
+}
+.info-text1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+  color: #333333;
+  margin-top: 5px;
+}
+.resend-link {
+  color: #ff5722;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.expires-text {
+  color: #ff5722;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.07px;
+  margin-top: 5px;
+}
+.back-arrow {
+  position: relative;
+  display: flex;
+  top: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+a {
+  color: #ff5722;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #e64a19;
+}

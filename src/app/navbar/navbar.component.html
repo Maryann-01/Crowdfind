@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center logo-div">
+      <img src="assets/images/Crowdfund-logo.png" class="me-2" style="height: 40px; width: 40px" alt="Crowdfind logo" />
+      <h2 class="navbar-brand">CrowdFind</h2>
+    </div>
+
+    <button class="navbar-toggler custom-toggler" type="button" (click)="toggleNavbar()">
+      <span *ngIf="!isNavbarCollapsed" class="navbar-toggler-icon"></span>
+      <span *ngIf="isNavbarCollapsed" class="close-icon">×</span>
+    </button>
+
+    <div class="collapse navbar-collapse" [class.show]="isNavbarCollapsed" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/events']" routerLinkActive="active">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active">About Us</a>
+        </li>
+      </ul>
+
+      <form class="d-flex nav-form mt-3 mt-lg-0" role="search" (submit)="$event.preventDefault()">
+        <div class="input-group">
+          <div class="bg-white search-div">
+            <i class="bi bi-search"></i>
+          </div>
+          <input
+            [(ngModel)]="searchQuery"
+            [ngModelOptions]="{ standalone: true }"
+            type="text"
+            class="form-control border-start-0"
+            placeholder="Search Events"
+            aria-label="Search"
+            (input)="onSearch()" />
+        </div>
+        <div *ngIf="showDropdown" class="dropdown-menu show">
+          <a *ngFor="let event of filteredEvents" class="dropdown-item" (click)="onSelectEvent(event?._id)">
+            {{ event.title }}
+          </a>
+        </div>
+      </form>
+
+      <div class="d-flex align-items-center ms-3 mt-3 mt-lg-0">
+        <button *ngIf="!isLoggedIn" class="btn btn-primary" [routerLink]="['/signup']"
+          style="background-color: #FF5722;border:0;">
+          Sign Up
+        </button>
+
+        <div *ngIf="isLoggedIn" class="profile-image d-flex align-items-center">
+          <button class="btn btn-primary ms-2" (click)="toggleLoginState()"
+            style="background-color: #FF5722; border:0;">
+            Log Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.home-info-sect-two .sect-img-txt{
+    display: flex;
+   gap:6vw;
+  justify-content: center;
+   align-items: center;
+}
+.home-info-sect-two .section-desc{
+font-family: Roboto;
+text-align: center;
+margin-top:10px;
+font-size: 40px;
+font-weight: 700;
+margin:8vh 0  4vh;
+}
+.body{
+    color: #000000;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+}
+.home-info-sect-two .section-txt{
+    width:35vw;
+    display:flex;
+    flex-direction: column;
+}
+ .home-info-sect-two .sectImg{
+    width:450px;
+    height:350px;
+
+}
+.info-btn{
+    background-color: #FF5722;
+    border:none;
+    padding:0.7vh 1.4vw;
+    color: #F5F5F5;
+    width:25vw;
+    margin-top: 3vh;
+}
+.list-div li{
+    margin:3vh 0 2vh;
+}
+.whyChoose-sect{
+    margin:10vh 0;
+}
+.whyChoose-sect-txt{
+    width:5vw;
+  }
+  .whyChoose-sect-img-txt{
+    gap:3vw;
+  }
+  .whyChoose-sect-img-txt img{
+  width:400px;
+  height:300px;
+  } 
+
+  @media (max-width:480px){
+    .home-info-sect-two{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        /* justify-content: flex-start; */
+    }
+    .sect-img-txt{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* width:90vw; */
+    }
+    .whyChoose-sect{
+        display: flex;
+    }
+    .sect-img-txt{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .list-div{
+        width: 90vw;
+        align-items: flex-start;
+    }
+    .section-txt button{
+        width: 90vw;
+    }
+ 
+    .home-info-sect-two .section-txt{
+        width:90vw;
+        align-items: flex-start;
+    }
+    .home-info-sect-two .sectImg{
+    width:400px;
+    height:350px;
+
+}
+  }

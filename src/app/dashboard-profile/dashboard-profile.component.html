@@ -1,0 +1,63 @@
+<section class="dashboard-profile">
+    <img 
+      [src]="profilePicture" 
+      alt="Current Profile Picture" 
+      (click)="triggerFileUpload()" 
+      style="width:100px;height:100px;border-radius:50%;background-size: cover;"
+    />
+    <p>{{user.name}}</p>
+    <p>{{ user.address }}</p>
+    <button (click)="toggleEditMode()" class="prof-btn">Edit Profile</button>
+    
+    <form 
+      class="prof-form" 
+      (submit)="updateProfile()"
+    >
+      <div>
+        <label class="profile-formlabel">Full Name</label>
+        <input 
+          type="text" 
+          [(ngModel)]="user.name" 
+          name="name" 
+          required 
+        />
+      </div>
+      <div>
+        <label class="profile-formlabel">Email</label>
+        <input 
+          type="email" 
+          [(ngModel)]="user.email" 
+          name="email" 
+          required 
+        />
+      </div>
+      <div>
+        <label class="profile-formlabel">Location</label>
+        <input 
+          type="text" 
+          [(ngModel)]="user.address" 
+          name="address" 
+          required 
+        />
+      </div>
+      <div>
+        <label class="profile-formlabel">Password</label>
+        <input 
+          type="password" 
+          [(ngModel)]="user.password" 
+          name="password" 
+        />
+      </div>
+      <button type="submit" class="saveChanges">Save Changes</button>
+    </form>
+  
+    <input 
+      id="profilePictureInput" 
+      type="file" 
+      (change)="uploadProfilePicture($event)" 
+      hidden 
+    />
+  </section>
+  
+  <app-stay-updated></app-stay-updated>
+  

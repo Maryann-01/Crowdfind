@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+.body {
+  margin: 0;
+  font-family: open sans;
+  display: flex;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.overlayDiv {
+  background: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  border-radius: 9px;
+  text-align: center;
+  width: 350px;
+  height: 325px;
+  position: relative;
+  font-size: 12px;
+}
+
+.close-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #ff5722;
+  border: 1px solid red;
+  width: 16.67px;
+  height: 16.67px;
+  border-radius: 16.72px;
+  text-decoration: none;
+}
+
+.close-button img {
+  width: 16.67px;
+  height: 16.67px;
+  top: 11.67px;
+  left: 11.67px;
+  gap: 0px;
+  border: 3.33px 0px 0px 0px;
+  opacity: 0px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  
+  }
+
+.success-icon {
+  width: 140px;
+  height: 140px;
+  background-color: #ff5722;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 10px;
+}
+
+.success-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+.message {
+  color: #2c2a2a;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.68px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.back-to-login {
+  color: #ff5722;
+  font-family: Open Sans;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 32.68px;
+  text-align: center;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  padding-top: 20px;
+}
+
+.back-to-login:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-section,
+  .form-section {
+    width: 100%;
+  }
+}

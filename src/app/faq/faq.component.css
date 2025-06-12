@@ -1,0 +1,49 @@
+.faq-sect{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:40vw;
+  margin:0 auto;
+}
+.accordion-item {
+  border: none;
+  border-bottom: 1px solid #EAEAEA; 
+}
+.accordion-item:last-child {
+  border-bottom: none;
+}
+   .accordion-button {
+    background: none;
+    gap:2vw;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px; 
+    font-family: Open Sans;
+    font-size: 0.6em;
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  .accordion-button::after {
+    content: none; 
+    /* border:2px solid red; */
+  }
+  
+  .accordion-body {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+
+.plusMinus{
+  color: #FF5722;
+font-size: 30px;
+font-weight: 350;
+}
+
+@media(max-width:480px){
+  .faq-sect{
+    width: 90vw;
+  }
+}

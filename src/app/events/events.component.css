@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.event-comp{
+    /* width:100vw; */
+}
+.myEvents{
+    /* width:100%; */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.trend-event-img{
+    /* width: 450px; */
+/* height: 386.42px; */
+object-fit: contain;
+/* border:2px solid red; */
+/* border-radius: 4px 0px 0px 0px; */
+}
+
+
+
+.event-container {
+    width: 100%;
+    padding: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 2rem; 
+    padding: 1rem;
+    
+  }
+  
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #9A9A99;
+    border-radius: 8px;
+    max-width:300px;
+    padding:1em;
+  }
+ .card{
+    border:none;
+ } 
+ 
+  .card-title ,.card-text{
+    margin-bottom: 0.5rem;
+    font-size:0.9em;
+    font-weight:600;
+  }
+ .save-share-icon{
+    display:flex;
+    justify-content: space-between;
+ } 
+ .save-share-icon img{
+    width:30px;
+    height:30px;
+ }
+  .trend-event-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    
+  }
+  .card-body-desc{
+    color: #FF5722;
+    font-family: Open Sans;
+/* font-size: 24px; */
+/* font-weight: 600; */
+}
+.event-btn{
+    border:none;
+    background-color: #FF5722;
+color:white;
+width:100%;
+border-radius:2px;
+padding:0.5em;
+}

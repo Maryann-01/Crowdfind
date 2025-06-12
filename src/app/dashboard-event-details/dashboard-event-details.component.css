@@ -1,0 +1,91 @@
+.myEventDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+}
+
+.event-details-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.event-card-large {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #9A9A99;
+    border-radius: 8px;
+    padding: 1.5em;
+}
+
+.event-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.event-img-large {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.save-share-icon {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1em;
+}
+
+.save-share-icon img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.card-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333;
+}
+
+.card-text {
+    margin-bottom: 0.8rem;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.card-body-desc {
+    color: #FF5722;
+    font-weight: 700;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5em;
+}
+
+.interest-btn, .not-interested-btn {
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 48%;
+    cursor: pointer;
+}
+
+.interest-btn {
+    background-color: #FF5722;
+    color: white;
+}
+
+.not-interested-btn {
+    background-color: #B0B0B0;
+    color: white;
+}

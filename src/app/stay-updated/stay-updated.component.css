@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.stayUpdated{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin:6vh 0;
+}
+.stayUpdated-text{
+    align-items: center;
+    width:30%;
+    margin:2vh 0;
+}
+.stayUpdated-text p{
+font-family: Open Sans;
+text-align: center;
+font-size: 1em;
+font-weight: 400;
+color: #4D4D4D;
+}
+.stayUpdated-text h1{
+    text-align: center;
+}
+.stayUpdated form{
+    display:flex;
+    align-items: center;
+    position:relative;
+}
+.stayUpdated input{
+    border: 1px solid #C0BFBF;
+    border-radius: 4px;
+    padding:1vh;
+    width:500px;
+ 
+}
+.stayUpdated input::placeholder{
+font-family: Open Sans;
+font-size: 14px;
+font-weight: 400;
+color: #767676;
+
+}
+.stayUpdated button{
+    background-color: #FF5722;
+   color: #F5F5F5;
+   border-radius: 4px;
+   border:none;
+   padding:0.7vh;
+    width:150px;
+   position:absolute;
+   right:3%;
+}
+
+@media(max-width:480px){
+    .stayUpdated{
+        display: flex;
+        flex-direction: column;
+    }
+    .stayUpdated-text{
+        width: 90vw;
+    }
+    .stayUpdated-btn{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+}
