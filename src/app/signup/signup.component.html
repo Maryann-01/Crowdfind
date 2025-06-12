@@ -19,9 +19,11 @@
 
         <label class="mend">Create Password</label>
         <input class="log" type="password" placeholder="Create Password Here" required [(ngModel)]="password" name="password" />
+        <div *ngIf="passwordError" class="error-message">{{ passwordError }}</div>
 
         <label class="mend">Confirm Password</label>
         <input class="log" type="password" placeholder="Confirm Password Here" required [(ngModel)]="confirmPassword" name="confirmPassword" />
+        <div *ngIf="confirmPasswordError" class="error-message">{{ confirmPasswordError }}</div>
 
         <div class="checkbox-container">
           <input class="check" type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required />
@@ -30,7 +32,7 @@
           </label>
         </div>
 
-        <button type="submit" class="signup-btn" >Create Account</button>
+        <button type="submit" class="signup-btn">Create Account</button>
       </form>
 
       <span class="pos" style="font-size:12px;">Have an Account? <a [routerLink]="['/login']">Login</a></span>
@@ -38,7 +40,6 @@
   </div>
 </div>
 
-<!-- Modal -->
 <div class="modal" *ngIf="showSuccessModal">
   <div class="modal-content">
     <img src="assets/images/success-image.png" alt="Success" />
