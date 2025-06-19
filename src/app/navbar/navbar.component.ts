@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,17 +13,37 @@ import { AuthService } from '../services/auth.services';
   styleUrls: ['./navbar.component.css'],
   providers: [EventService],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   searchQuery: string = '';
   filteredEvents: any[] = [];
   showDropdown: boolean = false;
   isLoggedIn: boolean = false;
   isNavbarCollapsed: boolean = false;
+  private loginCheckInterval: any;
 
-  constructor(private eventService: EventService, private router: Router, private authService: AuthService) {}
+  constructor(
+    private eventService: EventService,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.isLoggedIn = this.authService.loggedIn;
+    this.loginCheckInterval = setInterval(() => {
+      const stillLoggedIn = this.authService.loggedIn;
+      if (this.isLoggedIn !== stillLoggedIn) {
+        this.isLoggedIn = stillLoggedIn;
+        if (!stillLoggedIn) {
+          this.router.navigate(['/home']);
+        }
+      }
+    }, 10000); // check every 10 seconds
+  }
+
+  ngOnDestroy(): void {
+    if (this.loginCheckInterval) {
+      clearInterval(this.loginCheckInterval);
+    }
   }
 
   toggleLoginState(): void {
@@ -53,7 +73,7 @@ export class NavbarComponent implements OnInit {
           console.error('Error fetching events:', error);
           this.filteredEvents = [];
           this.showDropdown = false;
-        }
+        },
       });
     } else {
       this.filteredEvents = [];

@@ -28,9 +28,13 @@ export class FeaturedEventsComponent implements OnInit {
     this.fetchEvents();
   }
 
+  // get skeletons() {
+  //   return Array(this.increment);
+  // }
   get skeletons() {
-    return Array(this.increment);
-  }
+  return Array.from({ length: this.increment }, (_, i) => i);
+}
+
 
   fetchEvents(): void {
     this.loading = true;

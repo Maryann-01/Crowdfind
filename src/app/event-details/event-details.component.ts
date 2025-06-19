@@ -8,6 +8,7 @@ import { StayUpdatedComponent } from '../stay-updated/stay-updated.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { InterestModalComponent } from '../interest-modal/interest-modal.component'; 
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 interface Event {
   _id: string;
   title: string;
@@ -22,7 +23,7 @@ interface Event {
 @Component({
   selector: 'app-event-details',
   standalone: true,
-  imports: [CommonModule, FooterComponent, StayUpdatedComponent, NavbarComponent, InterestModalComponent],
+  imports: [CommonModule, NgxSkeletonLoaderModule , FooterComponent, StayUpdatedComponent, NavbarComponent, InterestModalComponent],
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.css']
 })
